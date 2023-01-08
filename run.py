@@ -29,10 +29,11 @@ def validate_data(values):
     Check values are intergers and 5 values given
     """
     try:
+        [int(value) for value in values]
         if len(values) != 5:
             raise ValueError("Please enter 5 values")
     except ValueError as e:
-        print(f"Invalid data: {e}, 1try again.")
+        print(f"Invalid data: {e}, try again.")
 
 
 get_inweight()
