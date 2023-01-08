@@ -12,8 +12,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('WeighingData')
 
-outweight = SHEET.worksheet('outweight')
-
-data = outweight.get_all_values()
-
-print(data)
+def get_inweight():
+    """
+    Get inweight from user
+    """
+    print("Please enter inweight values from the 5 vehicles, seperated by commas")
+    data_str = input("Enter value here: " )
+    print(f"You have entered {data_str} kg")
