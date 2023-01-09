@@ -17,12 +17,18 @@ def get_inweight():
     """
     Get inweight from user
     """
-    print("Please enter inweight values for 5 vehicles, seperated by commas.")
-    data_str = input("Enter value here: ")
+    while True:
+        print("Please enter inweight values for 5 vehicles, seperated by commas.")
+        
+        data_str = input("Enter value here: ")
     
-    inweight = data_str.split(",")
-    validate_data(inweight)
+        inweight = data_str.split(",")
 
+        if validate_data(inweight):
+            print("Data Valid")
+            break
+
+    return inweight
 
 def validate_data(values):
     """
@@ -34,6 +40,9 @@ def validate_data(values):
             raise ValueError("Please enter 5 values")
     except ValueError as e:
         print(f"Invalid data: {e}, try again.")
+        return False
+
+    return True
 
 
-get_inweight()
+data = get_inweight()
