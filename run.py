@@ -18,10 +18,10 @@ def get_inweight():
     Get inweight from user
     """
     while True:
-        print("Please enter inweight values for 5 vehicles, seperated by commas.")
-        
+        print("Please enter inweight for 5 vehicles, seperated by commas.")
+       
         data_str = input("Enter value here: ")
-    
+   
         inweight = data_str.split(",")
 
         if validate_data(inweight):
@@ -29,6 +29,7 @@ def get_inweight():
             break
 
     return inweight
+
 
 def validate_data(values):
     """
@@ -45,4 +46,16 @@ def validate_data(values):
     return True
 
 
+def update_inweight_worksheet(data):
+    """
+    Update inweight worksheet and add new row with csv data input
+    """
+    print("Updating inweight worksheet...")
+    inweight_worksheet = SHEET.worksheet("inweight")
+    inweight_worksheet.append_row(data)
+    print("Inweight worksheet updated successfully")
+
+
 data = get_inweight()
+inweight = [int(num) for num in data]
+update_inweight_worksheet(inweight)
