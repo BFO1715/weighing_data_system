@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -85,11 +84,17 @@ def update_outweight_worksheet(data_two):
     print("Outweight worksheet updated successfully")
     
 
-def calculate_netweight(inweight_row):
+def calculate_netweight():
     """
     Calculate netweight by subtracting inweight from outweight.
     """
+    outweight_data = SHEET.worksheet("outweight").get_all_values()
+    outweight_row = outweight_data[-1]
+    inweight_data = SHEET.worksheet("inweight").get_all_values()
+    inweight_row = inweight_data[-1]
     print("Calculating netweight...")
+    print(f"outweight: {outweight_row}")
+    print(f"inweight: {inweight_row}")
 
 
 def main():
@@ -100,7 +105,7 @@ def main():
     outweight = [int(num) for num in data_two]
     update_outweight_worksheet(outweight)
 
-    calculate_netweight(inweight)
+    calculate_netweight()
 
 
 print("Weighing Control System")
