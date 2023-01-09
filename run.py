@@ -25,7 +25,6 @@ def get_inweight():
         inweight = data_str.split(",")
 
         if validate_data(inweight):
-            print("Data Valid")
             break
 
     return inweight
@@ -43,7 +42,6 @@ def get_outweight():
         outweight = data_str.split(",")
 
         if validate_data(outweight):
-            print("Data Valid")
             break
 
     return outweight
@@ -84,7 +82,7 @@ def update_outweight_worksheet(data_two):
     print("Outweight worksheet updated successfully")
     
 
-def calculate_netweight():
+def calculate_netweight_row():
     """
     Calculate netweight by subtracting inweight from outweight.
     """
@@ -93,8 +91,23 @@ def calculate_netweight():
     inweight_data = SHEET.worksheet("inweight").get_all_values()
     inweight_row = inweight_data[-1]
     print("Calculating netweight...")
-    print(f"outweight: {outweight_row}")
-    print(f"inweight: {inweight_row}")
+
+    netweight_row = []
+    for outweight, inweight in zip(outweight_row, inweight_row):
+        netweight = int(outweight) - int(inweight)
+        netweight_row.append(netweight)
+
+    return netweight_row
+
+
+def update_netweight_worksheet(data_three):
+    """
+    Update netweight worksheet and add new row with csv data input
+    """
+    print("Updating netweight worksheet...")
+    netweight_worksheet = SHEET.worksheet("netweight")
+    netweight_worksheet.append_row(data_three)
+    print("Netweight worksheet updated successfully")
 
 
 def main():
@@ -104,8 +117,13 @@ def main():
     data_two = get_outweight()
     outweight = [int(num) for num in data_two]
     update_outweight_worksheet(outweight)
+    data_three = calculate_netweight_row()
+    netweight = [int(num) for num in data_three]
+    update_netweight_worksheet(netweight)
 
-    calculate_netweight()
+    print(f"outweight: {outweight}")
+    print(f"inweight: {inweight}")
+    print(f"netweight: {data_three}")
 
 
 print("Weighing Control System")
