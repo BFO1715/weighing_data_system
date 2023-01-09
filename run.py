@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -31,6 +32,24 @@ def get_inweight():
     return inweight
 
 
+def get_outweight():
+    """
+    Get outweight from user
+    """
+    while True:
+        print("Please enter outweight for 5 vehicles, seperated by commas.")
+       
+        data_str = input("Enter value here: ")
+   
+        outweight = data_str.split(",")
+
+        if validate_data(outweight):
+            print("Data Valid")
+            break
+
+    return outweight
+
+
 def validate_data(values):
     """
     Check values are intergers and 5 values given
@@ -56,6 +75,33 @@ def update_inweight_worksheet(data):
     print("Inweight worksheet updated successfully")
 
 
-data = get_inweight()
-inweight = [int(num) for num in data]
-update_inweight_worksheet(inweight)
+def update_outweight_worksheet(data_two):
+    """
+    Update outweight worksheet and add new row with csv data input
+    """
+    print("Updating outweight worksheet...")
+    outweight_worksheet = SHEET.worksheet("outweight")
+    outweight_worksheet.append_row(data_two)
+    print("Outweight worksheet updated successfully")
+    
+
+def calculate_netweight(inweight_row):
+    """
+    Calculate netweight by subtracting inweight from outweight.
+    """
+    print("Calculating netweight...")
+
+
+def main():
+    data = get_inweight()
+    inweight = [int(num) for num in data]
+    update_inweight_worksheet(inweight)
+    data_two = get_outweight()
+    outweight = [int(num) for num in data_two]
+    update_outweight_worksheet(outweight)
+
+    calculate_netweight(inweight)
+
+
+print("Weighing Control System")
+main()
