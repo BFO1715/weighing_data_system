@@ -69,7 +69,8 @@ def update_inweight_worksheet(data):
     print("Updating inweight worksheet...")
     inweight_worksheet = SHEET.worksheet("inweight")
     inweight_worksheet.append_row(data)
-    print("inweight worksheet updated successfully")
+    print("Inweight worksheet updated successfully")
+    print("----------------------------------------")
 
 
 def update_outweight_worksheet(data_two):
@@ -79,10 +80,11 @@ def update_outweight_worksheet(data_two):
     print("Updating outweight worksheet...")
     outweight_worksheet = SHEET.worksheet("outweight")
     outweight_worksheet.append_row(data_two)
-    print("outweight worksheet updated successfully")
+    print("Outweight worksheet updated successfully")
+    print("----------------------------------------")
     
 
-def calculate_netweight_row():
+def calculate_netweight():
     """
     Calculate netweight by subtracting inweight from outweight.
     """
@@ -108,6 +110,7 @@ def update_netweight_worksheet(data_three):
     netweight_worksheet = SHEET.worksheet("netweight")
     netweight_worksheet.append_row(data_three)
     print("netweight worksheet updated successfully")
+    print("----------------------------------------")
 
 
 def main():
@@ -117,14 +120,15 @@ def main():
     data_two = get_outweight()
     outweight = [int(num) for num in data_two]
     update_outweight_worksheet(outweight)
-    data_three = calculate_netweight_row()
+    data_three = calculate_netweight()
     netweight = [int(num) for num in data_three]
     update_netweight_worksheet(netweight)
 
     print(f"outweight: {outweight}")
     print(f"inweight: {inweight}")
-    print(f"netweight: {data_three}")
+    print(f"netweight: {netweight}")
 
 
 print("WEIGHING CONTROL SYSTEM")
+print("----------------------------------------")
 main()
