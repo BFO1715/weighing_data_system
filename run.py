@@ -147,6 +147,6 @@ def main():
     print(f"total load: {total_load}")
 
 
-print("WEIGHING CONTROL SYSTEM")
+print("WEIGHING DATA SYSTEM")
 print("----------------------------------------")
 main()
