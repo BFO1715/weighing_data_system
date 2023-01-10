@@ -19,11 +19,8 @@ def get_inweight():
     """
     while True:
         print("Please enter inweight for 5 vehicles, seperated by commas.")
-       
         data_str = input("Enter value here: ")
-   
         inweight = data_str.split(",")
-
         if validate_data(inweight):
             break
 
@@ -36,11 +33,8 @@ def get_outweight():
     """
     while True:
         print("Please enter outweight for 5 vehicles, seperated by commas.")
-       
         data_str = input("Enter value here: ")
-   
         outweight = data_str.split(",")
-
         if validate_data(outweight):
             break
 
@@ -49,7 +43,7 @@ def get_outweight():
 
 def validate_data(values):
     """
-    Check values are intergers and 5 values given
+    Check values are integers and 5 values given
     """
     try:
         [int(value) for value in values]
@@ -122,7 +116,6 @@ def calculate_total_load():
     print("----------------------------------------")
     print("Calculating total load...")
     print("----------------------------------------")
-
     total_load = netweight_row
 
     return total_load
@@ -148,6 +141,7 @@ def main():
     print("----------------------------------------")
 
 
-print("WEIGHING CONTROL SYSTEM")
-print("----------------------------------------")
-main()
+if __name__ == '__main__':
+    print("WEIGHING CONTROL SYSTEM")
+    print("----------------------------------------")
+    main()
