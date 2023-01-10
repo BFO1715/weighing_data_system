@@ -145,8 +145,9 @@ def main():
     print(f"inweight: {inweight}")
     print(f"netweight: {netweight}")
     print(f"total load: {total_load}")
+    print("----------------------------------------")
 
 
-print("WEIGHING DATA SYSTEM")
+print("WEIGHING CONTROL SYSTEM")
 print("----------------------------------------")
 main()
