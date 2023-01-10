@@ -109,8 +109,23 @@ def update_netweight_worksheet(data_three):
     print("Updating netweight worksheet...")
     netweight_worksheet = SHEET.worksheet("netweight")
     netweight_worksheet.append_row(data_three)
-    print("netweight worksheet updated successfully")
+    print("Netweight worksheet updated successfully")
     print("----------------------------------------")
+
+
+def calculate_total_load():
+    """
+    Calculate the total load (i.e. sum of newtweights) of the 5 vehicles
+    """
+    netweight_data = SHEET.worksheet("netweight").get_all_values()
+    netweight_row = netweight_data[-1]
+    print("----------------------------------------")
+    print("Calculating total load...")
+    print("----------------------------------------")
+
+    total_load = netweight_row
+
+    return total_load
 
 
 def main():
@@ -123,10 +138,13 @@ def main():
     data_three = calculate_netweight()
     netweight = [int(num) for num in data_three]
     update_netweight_worksheet(netweight)
+    data_four = calculate_total_load()
+    total_load = sum([int(num) for num in data_four])
 
     print(f"outweight: {outweight}")
     print(f"inweight: {inweight}")
     print(f"netweight: {netweight}")
+    print(f"total load: {total_load}")
 
 
 print("WEIGHING CONTROL SYSTEM")
