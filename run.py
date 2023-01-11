@@ -5,7 +5,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
@@ -76,7 +76,7 @@ def update_outweight_worksheet(data_two):
     outweight_worksheet.append_row(data_two)
     print("Outweight worksheet updated successfully")
     print("----------------------------------------")
-    
+
 
 def calculate_netweight():
     """
