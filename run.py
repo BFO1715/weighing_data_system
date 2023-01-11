@@ -18,8 +18,8 @@ def get_inweight():
     Get inweight from user
     """
     while True:
-        print("Please enter inweight for 5 vehicles, seperated by commas.")
-        data_str = input("Enter value here: ")
+        print("Please enter inweight for 5 vehicles seperated by commas only")
+        data_str = input("Enter value here - numbers only): ")
         inweight = data_str.split(",")
         if validate_data(inweight):
             break
@@ -32,8 +32,8 @@ def get_outweight():
     Get outweight from user
     """
     while True:
-        print("Please enter outweight for 5 vehicles, seperated by commas.")
-        data_str = input("Enter value here: ")
+        print("Please enter outweight for 5 vehicles seperated by commas only")
+        data_str = input("Enter value here - numbers only): ")
         outweight = data_str.split(",")
         if validate_data(outweight):
             break
@@ -43,7 +43,8 @@ def get_outweight():
 
 def validate_data(values):
     """
-    Check values are integers and 5 values given
+    Check values are integers
+    Check 5 values are given
     """
     try:
         [int(value) for value in values]
@@ -80,7 +81,7 @@ def update_outweight_worksheet(data_two):
 
 def calculate_netweight():
     """
-    Calculate netweight by subtracting inweight from outweight.
+    Calculate netweight by subtracting inweight from outweight
     """
     outweight_data = SHEET.worksheet("outweight").get_all_values()
     outweight_row = outweight_data[-1]
@@ -134,14 +135,14 @@ def main():
     data_four = calculate_total_load()
     total_load = sum([int(num) for num in data_four])
 
-    print(f"outweight: {outweight}")
-    print(f"inweight: {inweight}")
-    print(f"netweight: {netweight}")
-    print(f"total load: {total_load}")
+    print(f"outweight(kg): {outweight}")
+    print(f"inweight(kg): {inweight}")
+    print(f"netweight(kg): {netweight}")
+    print(f"total load(kg): {total_load}")
     print("----------------------------------------")
 
 
 if __name__ == '__main__':
-    print("WEIGHING CONTROL SYSTEM")
+    print("WEIGHING DATA SYSTEM")
     print("----------------------------------------")
     main()
