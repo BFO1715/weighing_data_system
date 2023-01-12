@@ -19,7 +19,7 @@ def get_inweight():
     """
     while True:
         print("Please enter inweight for 5 vehicles seperated by commas only")
-        data_str = input("Enter value here - (numbers only): ")
+        data_str = input("Enter value here - (numbers only):\n")
         inweight = data_str.split(",")
         if validate_data(inweight):
             break
@@ -33,7 +33,7 @@ def get_outweight():
     """
     while True:
         print("Please enter outweight for 5 vehicles seperated by commas only")
-        data_str = input("Enter value here - (numbers only): ")
+        data_str = input("Enter value here - (numbers only):\n")
         outweight = data_str.split(",")
         if validate_data(outweight):
             break
