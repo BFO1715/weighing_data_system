@@ -53,7 +53,6 @@ What technology was used?<br>
 <li>Python</li>
 <li>Google API</li>
 <li>Heroku</li>
-<li>Nodejs</li>
 </ul>
 
 <strong><u>TESTING</u></strong>
