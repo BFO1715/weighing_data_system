@@ -73,7 +73,7 @@ Program tested fine afterwards though this bug kept happening upon opening works
 
 <img src="assets/images/bugs_fixed.png" alt="Bugs Fixed" width="400" height="225"><img src="assets/images/bug_fixed_testing.png" alt="Bug Fixed Testing" width="400" height="225"><br>
 
-Program still requires the pip installs and creds.json upload upon opening workspace on new device.
+Program still requires the pip install gspread and creds.json upload upon opening workspace on new device.
 
 Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators.
 
@@ -86,6 +86,8 @@ The project was deployed on Heroku. The steps to deploy are as follows:<br>
 <li>Link Heroku app to repository</li>
 <li>Select Deploy</li>
 </ul>
+
+The live link can be found here XXXXXXXXXXXXXXXXXXXXXX
 
 <strong><u>CREDITS</u></strong>
 
