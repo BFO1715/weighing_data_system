@@ -48,12 +48,11 @@ Allow the user to select how many vehicles they will have coming to and leaving 
 
 What technology was used?<br>
 <ul>
-<li>Gitpod</li>
-<li>Github</li>
-<li>Python</li>
-<li>Google API</li>
-<li>Heroku</li>
-<li>Node.js</li>
+<li>Gitpod - writing code on workspace.</li>
+<li>Github - hosting repository.</li>
+<li>Python - programming language used to write code.</li>
+<li>Google API - interface used to allow integration between google sheets and program.</li>
+<li>Heroku - platform used to deploy the app.</li>
 </ul>
 
 <strong><u>TESTING</u></strong>

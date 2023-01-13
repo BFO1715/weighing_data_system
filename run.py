@@ -45,11 +45,10 @@ def validate_data(values):
     """
     Check values are integers
     Check 5 values are given
-    ATTEMPTING CHECK ON VALUES UNDER 7500kg
     """
     try:
         [int(value) for value in values]
-        if len(values) != 5 and all(value < 7500 for value in values):
+        if len(values) != 5:
             raise ValueError("Please enter 5 values")
     except ValueError as e:
         print(f"Invalid data: {e}, try again.")
