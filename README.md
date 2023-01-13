@@ -75,14 +75,21 @@ Program tested fine afterwards though this bug kept happening upon opening works
 
 Program still requires the pip install gspread and creds.json upload upon opening workspace on new device.
 
-Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators.
+Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators. Tested the app and working well as evidenced above in surface and opening section when correct data input.
+
+Tested app by entering common errors such as inputting a string instead of integer, not inputting 5 values and missing commas:
+
+<img src="assets/images/app_error_testing.png" alt="Bugs Fixed" width="400" height="225">
 
 <strong><u>DEPLOYMENT</u></strong>
 
 How was the project deployed?<br>
 The project was deployed on Heroku. The steps to deploy are as follows:<br>
 <ul>
-<li>Create new Heroku app</li>
+<li>Open Gitpod via Github repository</li>
+<li>Run python3 run.py to test program</li>
+<li>Commit and push workspace to Github</li>
+<li>Link Heroku to Githib and create new app</li>
 <li>Add creds.json config</li>
 <li>Add python buildpack</li>
 <li>Add node.js buildpack</li>
