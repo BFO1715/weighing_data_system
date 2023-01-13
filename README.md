@@ -2,7 +2,7 @@
 
 Weighing Data System is a terminal application that allows the user to input the inweight of vehicles that coming into a site and input the outweights of a vehicles leaving site. The system then calculates the netweight of each vehicle and the total load of vehicles that have been in and out of site for that period (this system is based on 5 vehicles per period weighed in kg). The data logged for inweight, outweight and netweight is then parsed to google sheets for record keeping and further analysis. 
 
-<img src="assets/images/placeholder.png" alt="Multi Device" width="405" height="250"><br>
+<img src="assets/images/app_multi_device.png" alt="App Multi Device" width="405" height="250"><br>
 <img src="assets/images/inweight_data.png" alt="Inweight Data" width="135" height="175"><img src="assets/images/outweight_data.png" alt="Outweight Data" width="135" height="175"><img src="assets/images/netweight_data.png" alt="Netweight Data" width="135" height="175">
 
 <strong><u>STRATEGY</u></strong>
@@ -37,7 +37,7 @@ Command-line interface with step by step instructions for user to follow and not
 
 What will the visual design look like?<br>
 
-<img src="assets/images/placeholder2.png" alt="App Screenshot" width="400" height="225"><br>
+<img src="assets/images/app_demo.png" alt="App Demo" width="400" height="225"><br>
 
 <strong><u>FUTURE RELEASES</u></strong>
 
@@ -91,7 +91,7 @@ The project was deployed on Heroku. The steps to deploy are as follows:<br>
 <li>Select Deploy</li>
 </ul>
 
-The live link can be found here XXXXXXXXXXXXXXXXXXXXXX
+The live link can be found here https://weighing-data.herokuapp.com/
 
 <strong><u>CREDITS</u></strong>
 
