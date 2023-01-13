@@ -53,6 +53,7 @@ What technology was used?<br>
 <li>Python</li>
 <li>Google API</li>
 <li>Heroku</li>
+<li>Node.js</li>
 </ul>
 
 <strong><u>TESTING</u></strong>
@@ -83,6 +84,9 @@ How was the project deployed?<br>
 The project was deployed on Heroku. The steps to deploy are as follows:<br>
 <ul>
 <li>Create new Heroku app</li>
+<li>Add creds.json config</li>
+<li>Add python buildpack</li>
+<li>Add node.js buildpack</li>
 <li>Link Heroku app to repository</li>
 <li>Select Deploy</li>
 </ul>
