@@ -75,11 +75,15 @@ Program tested fine afterwards though this bug kept happening upon opening works
 
 Program still requires the pip install gspread and creds.json upload upon opening workspace on new device.
 
-Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators. Tested the app and working well as evidenced above in surface and opening section when correct data input.
+Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators. 
+
+Tested the app and working well as evidenced below and above in surface and opening section when correct data input.
+
+<img src="assets/images/heroku_test.png" alt="Heroku Testing" width="400" height="225">
 
 Tested app by entering common errors such as inputting a string instead of integer, not inputting 5 values and missing commas:
 
-<img src="assets/images/app_error_testing.png" alt="Bugs Fixed" width="400" height="225">
+<img src="assets/images/app_error_testing.png" alt="App Error Testing" width="400" height="225">
 
 <strong><u>DEPLOYMENT</u></strong>
 
