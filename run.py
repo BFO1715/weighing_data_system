@@ -1,3 +1,6 @@
+"""
+Linking with google sheets
+"""
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -17,13 +20,16 @@ def get_inweight():
     """
     Get inweight from user
     """
+    inweight = []
     while True:
         print("Please enter inweight for 5 vehicles seperated by commas only")
         data_str = input("Enter value here - (numbers only):\n")
-        inweight = data_str.split(",")
+        try:
+            inweight = convert_to_integer(data_str.split(","))
+        except ValueError as value_error:
+            print(value_error)
         if validate_data(inweight):
             break
-
     return inweight
 
 
@@ -31,27 +37,42 @@ def get_outweight():
     """
     Get outweight from user
     """
+    outweight = []
     while True:
         print("Please enter outweight for 5 vehicles seperated by commas only")
         data_str = input("Enter value here - (numbers only):\n")
-        outweight = data_str.split(",")
+        try:
+            outweight = convert_to_integer(data_str.split(","))
+        except ValueError as value_error:
+            print(value_error)
         if validate_data(outweight):
             break
-
     return outweight
+
+
+def convert_to_integer(values):
+    converted_values = []
+    for value in values:
+        if str(value).isnumeric():
+            converted_values.append(int(value))
+        else:
+            raise ValueError("Invalid value: " + value)
+    return converted_values
 
 
 def validate_data(values):
     """
     Check values are integers
     Check 5 values are given
+    Check values are over 7,500kg
     """
     try:
-        [int(value) for value in values]
         if len(values) != 5:
             raise ValueError("Please enter 5 values")
-    except ValueError as e:
-        print(f"Invalid data: {e}, try again.")
+        if any(value < 7500 for value in values):
+            raise ValueError("Please enter value over 7500kg")
+    except ValueError as value_error:
+        print(f"Invalid data: {value_error}, try again.")
         return False
 
     return True
