@@ -23,7 +23,7 @@ def get_inweight():
     inweight = []
     while True:
         print("Please enter inweight for 5 vehicles seperated by commas only")
-        data_str = input("Enter value here - (numbers only):\n")
+        data_str = input("Enter value here - (numbers only => 7,500kg):\n")
         try:
             inweight = convert_to_integer(data_str.split(","))
         except ValueError as value_error:
@@ -40,7 +40,7 @@ def get_outweight():
     outweight = []
     while True:
         print("Please enter outweight for 5 vehicles seperated by commas only")
-        data_str = input("Enter value here - (numbers only):\n")
+        data_str = input("Enter value here - (numbers only => 7,500kg):\n")
         try:
             outweight = convert_to_integer(data_str.split(","))
         except ValueError as value_error:
@@ -70,7 +70,7 @@ def validate_data(values):
         if len(values) != 5:
             raise ValueError("Please enter 5 values")
         if any(value < 7500 for value in values):
-            raise ValueError("Please enter value over 7500kg")
+            raise ValueError("Please enter value => 7500kg")
     except ValueError as value_error:
         print(f"Invalid data: {value_error}, try again.")
         return False

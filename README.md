@@ -1,6 +1,6 @@
 # Weighing Data System
 
-Weighing Data System is a terminal application that allows the user to input the inweight of vehicles that coming into a site and input the outweights of a vehicles leaving site. The system then calculates the netweight of each vehicle and the total load of vehicles that have been in and out of site for that period (this system is based on 5 vehicles per period weighed in kg). The data logged for inweight, outweight and netweight is then parsed to google sheets for record keeping and further analysis. 
+Weighing Data System is a terminal application that allows the user to input the inweight of vehicles that coming into a site and input the outweights of vehicles leaving site. The system then calculates the netweight of each vehicle and the total load of vehicles that have been in and out of site for that period (this system is based on 5 vehicles per period weighing a minimum of 7,500kg). The data logged for inweight, outweight and netweight is then parsed to google sheets for record keeping and further analysis. 
 
 <img src="assets/images/app_multi_device.png" alt="App Multi Device" width="405" height="250"><br>
 <img src="assets/images/inweight_data.png" alt="Inweight Data" width="135" height="175"><img src="assets/images/outweight_data.png" alt="Outweight Data" width="135" height="175"><img src="assets/images/netweight_data.png" alt="Netweight Data" width="135" height="175">
@@ -8,7 +8,7 @@ Weighing Data System is a terminal application that allows the user to input the
 <strong><u>STRATEGY</u></strong>
 
 Focus - What’s worth doing?<br>
-Allow the user to input weight of vehicles arriving and leaving sites, calculate netweight and total load the parse the data.<br><br>
+Creating an app that allows a user to input weight of vehicles arriving and leaving sites, automatically calculate netweight and total load then upload the data for record keeping and further analysis.<br><br>
 Definition - What are we creating?<br>
 A terminal application that allows the user to address a real-life need – inputting and analyzing data in the weighing industry.<br><br>
 Value - What value does it provide?<br>
@@ -22,7 +22,7 @@ There will be two input requests for the user asking for 5 inweights as the vehi
 <strong><u>STRUCTURE</u></strong>
 
 How is the user interaction designed?<br>
-At the top of the terminal will be the title of the application Weighing Data System. The user will then be asked to input the 5 inweights which will give an error if the values entered aren’t integers or in the correct format. The user will then be notified if the inweight data has been successfully uploaded to google sheets. Next, the user will be asked to input 5 outweights which will also give an error if the values entered aren’t integers or in the correct format. The user will then be notified if the outweight data has been successfully uploaded to google sheets. The app will then calculate netweight from outweights minus inweights and notofy the user when the netweight data has been successfully uploaded to google sheets. The app will then calculate total load by adding the 5 netweights then printing each of the outweights, inweights, netweights and finally total load. 
+At the top of the terminal will be the title of the application Weighing Data System. The user will then be asked to input the 5 inweights which will give an error if the values entered aren’t integers, over required weight or in the correct format. The user will then be notified if the inweight data has been successfully uploaded to google sheets. Next, the user will be asked to input 5 outweights which will also give an error if the values entered aren’t integers, over required weight or in the correct format. The user will then be notified if the outweight data has been successfully uploaded to google sheets. The app will then calculate netweight from outweights minus inweights and notify the user when the netweight data has been successfully uploaded to google sheets. The app will then calculate total load by adding the 5 netweights then printing each of the outweights, inweights, netweights and finally total load. 
 
 <img src="assets/images/process_flowchart.png" alt="Process Flowchart" width="500" height="200"><br>
 
