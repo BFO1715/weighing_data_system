@@ -2,8 +2,7 @@
 
 Weighing Data System is a terminal application that allows the user to input the inweight of vehicles that coming into a site and input the outweights of vehicles leaving site. The system then calculates the netweight of each vehicle and the total load of vehicles that have been in and out of site for that period (this system is based on 5 vehicles per period weighing a minimum of 7,500kg). The data logged for inweight, outweight and netweight is then parsed to google sheets for record keeping and further analysis. 
 
-<img src="assets/images/app_multi_device.png" alt="App Multi Device" width="405" height="250"><br>
-<img src="assets/images/inweight_data.png" alt="Inweight Data" width="135" height="175"><img src="assets/images/outweight_data.png" alt="Outweight Data" width="135" height="175"><img src="assets/images/netweight_data.png" alt="Netweight Data" width="135" height="175">
+<img src="assets/images/app_multi_device.png" alt="App Multi Device" width="405" height="250"><img src="assets/images/inweight_data.png" alt="Inweight Data" width="135" height="250"><img src="assets/images/outweight_data.png" alt="Outweight Data" width="135" height="250"><img src="assets/images/netweight_data.png" alt="Netweight Data" width="135" height="250">
 
 <strong><u>STRATEGY</u></strong>
 
@@ -36,6 +35,7 @@ Command-line interface with step by step instructions for user to follow and not
 <strong><u>SURFACE</u></strong>
 
 What will the visual design look like?<br>
+Heroku app with step by step instructions for user to follow and notifications of outputs.<br>
 
 <img src="assets/images/app_demo.png" alt="App Demo" width="400" height="225"><br>
 
@@ -57,8 +57,26 @@ What technology was used?<br>
 
 <strong><u>TESTING</u></strong>
 
-How was the site tested and are there any bugs that have not been addressed?<br>
-Bug was found upon opening workspace on different device after a previously successful test, commit and push.  Error messages - Unable to import gspread and Unable to import google.oauth2.service_account.<br><br>
+How was the app tested and are there any bugs that have not been addressed?<br>
+Tested code PEP8 on https://www.pythonchecker.com/ with no major errors and a 96% mark. 6 minor issues are no whitespaces around operators. Also tested code by running pylint run.py on the terminal with the following results:
+
+<img src="assets/images/pylint_test.png" alt="Pylint Test" width="1000" height="225"><br>
+
+Reviewed app on Heroku dashboard and zero errors found as per below:
+
+<img src="assets/images/heroku_test.png" alt="Heroku Testing" width="400" height="225">
+
+Tested app is working correctly by following the step by step instructions in order to spot errors or inconsistencies - none found as per below:
+
+<img src="assets/images/app_first_test.png" alt="App First Test" width="400" height="225"><img src="assets/images/app_second_test.png" alt="App Second Test" width="400" height="225"><img src="assets/images/app_final_test.png" alt="App Final Test" width="400" height="225"><br>
+<img src="assets/images/sheets_first_test.png" alt="Sheets First Test" width="400" height="225"><img src="assets/images/sheets_second_test.png" alt="Sheets Second Test" width="400" height="225"><img src="assets/images/sheets_final_test.png" alt="Sheets Final Test" width="400" height="225">
+
+Tested possible common errors such as inputting a string instead of integer, not inputting 5 values and inputting values less than 7,500kg:
+
+<img src="assets/images/app_str_error.png" alt="String Error Testing" width="400" height="225"><img src="assets/images/app_count_error.png" alt="Count Error Testing" width="400" height="225"><img src="assets/images/app_value_error.png" alt="Value Error Testing" width="400" height="225">
+
+
+Bug was found upon opening workspace on different device after a previously successful test, commit and push.  Error messages - Unable to import gspread and Unable to import google.oauth2.service_account.<br>
 
 <img src="assets/images/gspread_bug.png" alt="Gspread Bug" width="400" height="225"><img src="assets/images/google_oauth2_bug.png" alt="Google Auth Bug" width="400" height="225"><br>
 
@@ -75,24 +93,13 @@ Program tested fine afterwards though this bug kept happening upon opening works
 
 Program still requires the pip install gspread and creds.json upload upon opening workspace on new device.
 
-Tested code manually on https://www.pythonchecker.com/  with no major errors and a 96% mark. Minor issues are no whitespaces around operators. 
-
-Tested the app and working well as evidenced below and above in surface and opening section when correct data input.
-
-<img src="assets/images/heroku_test.png" alt="Heroku Testing" width="400" height="225">
-
-Tested app by entering common errors such as inputting a string instead of integer, not inputting 5 values and missing commas:
-
-<img src="assets/images/app_error_testing.png" alt="App Error Testing" width="400" height="225">
-
 <strong><u>DEPLOYMENT</u></strong>
 
 How was the project deployed?<br>
-The project was deployed on Heroku. The steps to deploy are as follows:<br>
+The project was deployed using Github, Gitpod and Heroku. The steps to deploy are as follows:<br>
 <ul>
 <li>Open Gitpod via Github repository</li>
 <li>Run python3 run.py to test program</li>
-<li>Commit and push workspace to Github</li>
 <li>Link Heroku to Githib and create new app</li>
 <li>Add creds.json config</li>
 <li>Add python buildpack</li>
